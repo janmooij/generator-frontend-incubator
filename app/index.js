@@ -17,9 +17,9 @@ var yo = require('yeoman-generator'),
 // end - Called last, cleanup, say good bye, etc
 ///////////////////////////////////////////////////////////////////////////////////////////
 
-module.exports = yo.generators.Base.extend({
+module.exports = yo.Base.extend({
 	constructor: function (arg, options) {
-		yo.generators.Base.apply(this, arguments);
+		yo.Base.apply(this, arguments);
 		this.settings = config;
 
 		for (var i = 0; i < arguments.length; i = i + 1) {

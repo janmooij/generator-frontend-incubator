@@ -21,20 +21,20 @@
   ],
   "dependencies": {
     "yeoman-generator": "^0.22.5",
-    "chalk": "^1.0.0",
+    "chalk": "^1.1.1",
     "mkdirp": "^0.5.1",
-    "yosay": "^1.0.2"
+    "yosay": "^1.1.0"
   },
   "devDependencies": {
-    "gulp": "^3.9.0",
+    "gulp": "^3.9.1",
     "gulp-exclude-gitignore": "^1.0.0",
     "gulp-istanbul": "^0.10.3",
     "gulp-load-plugins": "^1.2.0",
-    "gulp-mocha": "^2.0.0",
-    "gulp-nsp": "^2.1.0",
-    "gulp-plumber": "^1.0.0",
+    "gulp-mocha": "^2.2.0",
+    "gulp-nsp": "^2.3.1",
+    "gulp-plumber": "^1.1.0",
     "path": "^0.12.7",
-    "yeoman-assert": "^2.0.0"
+    "yeoman-assert": "^2.1.1"
   },
   "scripts": {
     "prepublish": "gulp prepublish",
