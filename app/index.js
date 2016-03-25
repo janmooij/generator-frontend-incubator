@@ -1,10 +1,9 @@
 'use strict';
-const yo = require('yeoman-generator'),
-	chalk = require('chalk'),
-	yosay = require('yosay'),
-	mkdirp = require('mkdirp'),
-	path = require('path'),
-	config = require('./config.json');
+const yo = require('yeoman-generator');
+const chalk = require('chalk');
+const yosay = require('yosay');
+const path = require('path');
+const config = require('./config.json');
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 // initializing - Your initialization methods (checking current project state, getting configs, etc)
