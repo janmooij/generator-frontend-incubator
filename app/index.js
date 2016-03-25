@@ -88,38 +88,38 @@ module.exports = yo.Base.extend({
 			name: 'ftpHost',
 			message: 'FTP host',
 			type: 'input',
-			when: function (answers) {
+			when: (answers) => {
 				return answers.configureFTP;
 			}
 		}, {
 			name: 'ftpUser',
 			message: 'FTP username',
 			type: 'input',
-			when: function (answers) {
+			when: (answers) => {
 				return answers.configureFTP;
 			}
 		}, {
 			name: 'ftpPass',
 			message: 'FTP password',
 			type: 'password',
-			when: function (answers) {
+			when: (answers) => {
 				return answers.configureFTP;
 			}
 		}];
 
 
-		this.prompt(prompts, function (props) {
+		this.prompt(prompts, (props) => {
 			this.props = props;
 			done();
-
-		}.bind(this));
+		});
 	},
 
 	writing: function () {
 
 		this.fs.copyTpl(
 			this.templatePath('_package.json'),
-			this.destinationPath('package.json'), {
+			this.destinationPath('package.json'),
+			{
 				name: this.props.projectName,
 				version: this.props.projectVersion
 			}
@@ -127,7 +127,8 @@ module.exports = yo.Base.extend({
 
 		this.fs.copyTpl(
 			this.templatePath('_config.json'),
-			this.destinationPath('config.json'), {
+			this.destinationPath('config.json'),
+			{
 				paths: this.settings.paths,
 				esVersion: this.props.es2015orLoose ? 'es2015-loose' : 'es2015',
 				ftp: {
@@ -140,7 +141,8 @@ module.exports = yo.Base.extend({
 
 		this.fs.copyTpl(
 			this.templatePath('_README.md'),
-			this.destinationPath('README.md'), {
+			this.destinationPath('README.md'),
+			{
 				name: this.props.projectName,
 				itcss: this.props.itcss
 			}
