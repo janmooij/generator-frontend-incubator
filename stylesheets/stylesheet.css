@@ -121,9 +121,14 @@ a:hover {
 }
 
 .project-tagline {
+	color: #ddd;
 	margin-bottom: 2rem;
 	font-weight: normal;
 	opacity: 0.7;
+}
+
+.project-tagline a {
+	color: #fff;
 }
 
 @media screen and (min-width: 64em) {
