@@ -1,7 +1,7 @@
 # generator-frontend-incubator 
 [![npm version](https://badge.fury.io/js/generator-frontend-incubator.svg)](https://badge.fury.io/js/generator-frontend-incubator) [![Dependency Status](https://david-dm.org/incentro/generator-frontend-incubator.svg)](https://david-dm.org/incentro/generator-frontend-incubator) [![Build Status](https://travis-ci.org/incentro/generator-frontend-incubator.svg?branch=master)](https://travis-ci.org/incentro/generator-frontend-incubator)
 
-> The Frontend Incubator is a starter kit for building scalable websites and webapplications. The developers of [Incentro](http://incentro.com) created this collection of best practices after making the same project structure and build process for each project.
+> The Frontend Incubator is a starter kit for building scalable websites and webapplications. The developers of [Incentro](http://incentro.com) created this collection of best practices after trying many project structures and build processes.
  
 ![Frontend Incubator](./logo.png)
 
