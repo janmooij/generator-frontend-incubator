@@ -218,7 +218,7 @@ gulp.task('verify:js', () => {
 		.pipe($.jshint.reporter('jshint-stylish'));
 });
 
-gulp.task('verify:css', function () {
+gulp.task('verify:css', () => {
 <% if (useSasslint) { -%>
 	gulp.src(config.path.src.asset.scss + '/**/*.scss')
 		.pipe($.plumber())
@@ -284,7 +284,7 @@ gulp.task('serve', ['compile'], () => {
 gulp.task('default', ['help']);
 
 
-gulp.task('help', function () {
+gulp.task('help', () => {
 	gulp.src('./tasks.json')
 		.pipe($.list());
 });
