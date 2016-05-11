@@ -10,8 +10,7 @@
 First, install [Yeoman](http://yeoman.io) and generator-frontend-incubator using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
 ```bash
-npm install -g yo
-npm install -g generator-frontend-incubator
+npm install -g yo generator-frontend-incubator
 ```
 
 Create a project folder and run the following command from that folder to generate a new project:
