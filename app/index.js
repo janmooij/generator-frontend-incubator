@@ -202,15 +202,15 @@ module.exports = yo.Base.extend({
 		if (useLoosePreset === true) {
 			devDependencies.push('babel-preset-es2015-loose');
 		}
+		if (this.props.useSasslint) {
+			devDependencies.push('sass-lint');
+			devDependencies.push('gulp-sass-lint');
+		}
 		devDependencies.push('babel-preset-es2015');
 		this.npmInstall(devDependencies, {saveDev: true});
 
 		// install extra dependencies:
 		let dependencies = this.props.dependencies || [];
-		if (this.props.useSasslint) {
-			dependencies.push('sass-lint');
-			dependencies.push('gulp-sass-lint');
-		}
 		if (dependencies && dependencies.length > 0) {
 			this.npmInstall(dependencies, {save: true});
 		}
