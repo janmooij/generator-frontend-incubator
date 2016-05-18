@@ -104,13 +104,9 @@ gulp.task('compile:js', () => {
 gulp.task('compile:css', () => {
 	return gulp.src(config.path.src.asset.scss + '/*.scss')
 
-		.pipe($.sass({precision: 8}))
-
-		.on('error', (error) => {
-			console.log(error);
-		})
-
-		.pipe($.plumber())
+        	.pipe($.sass({
+        		precision: 8
+        	}).on('error', $.sass.logError))
 
 		.pipe($.ignore('**/*.css.map'))
 
