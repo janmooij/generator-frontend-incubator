@@ -4,7 +4,7 @@
 // Include Gulp & Tools We'll Use
 const gulp = require('gulp');
 const $ = require('gulp-load-plugins')();
-const rimraf = require('rimraf');
+const del = require('del');
 const runSequence = require('run-sequence');
 const browserSync = require('browser-sync');
 const through2 = require('through2');
@@ -226,9 +226,7 @@ gulp.task('verify:css', () => {
 
 // Clean Output Directories
 gulp.task('clean', (cb) => {
-	rimraf(config.path.build.root, () => {
-		$.cache.clearAll(cb);
-	});
+	return del(config.path.build.root);
 });
 
 
