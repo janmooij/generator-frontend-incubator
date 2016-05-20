@@ -42,6 +42,7 @@
   "engineStrict": true,
   "engines": {
     "npm": ">=3.7.3",
-    "node": ">=5.8.0"
+    "node": ">=5.8.0",
+    "yo": ">=1.8.0"
   }
 }
