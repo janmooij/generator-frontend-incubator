@@ -33,7 +33,8 @@
     "gulp-nsp": "^2.3.1",
     "gulp-plumber": "^1.1.0",
     "path": "^0.12.7",
-    "yeoman-assert": "^2.1.1"
+    "yeoman-assert": "^2.1.1",
+    "yo": "^1.8.3"
   },
   "scripts": {
     "prepublish": "gulp prepublish",
@@ -42,7 +43,6 @@
   "engineStrict": true,
   "engines": {
     "npm": ">=3.7.3",
-    "node": ">=5.8.0",
-    "yo": ">=1.8.0"
+    "node": ">=5.8.0"
   }
 }
