@@ -108,10 +108,10 @@ module.exports = yo.Base.extend({
 		}];
 
 
-		this.prompt(prompts, (props) => {
-			this.props = props;
+		return this.prompt(prompts).then(function (answers) {
+			this.props = answers;
 			done();
-		});
+		}.bind(this));
 	},
 
 	writing: function () {
