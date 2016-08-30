@@ -1,0 +1,59 @@
+{
+    "path": {
+        "src": {
+            "root": "<%= paths.src.root %>",
+            "asset": {
+                "javascript": "<%= paths.src.asset.javascript %>",
+                "image": "<%= paths.src.asset.image %>",
+                "font": "<%= paths.src.asset.font %>",
+                "scss": "<%= paths.src.asset.scss %>"
+            },
+            "prototype": {
+                "template": "<%= paths.src.prototype.template %>",
+                "data": "<%= paths.src.prototype.data %>",
+                "webroot": "<%= paths.src.prototype.webroot %>"
+            },
+            "patternLibrary": {
+                "root": "<%= paths.src.patternLibrary.root %>",
+                "template": "<%= paths.src.patternLibrary.template %>"
+            }
+        },
+
+        "build": {
+            "root": "<%= paths.build.root %>",
+            "asset": {
+                "javascript": "<%= paths.build.asset.javascript %>",
+                "image": "<%= paths.build.asset.image %>",
+                "font": "<%= paths.build.asset.font %>",
+                "css": "<%= paths.build.asset.css %>"
+            },
+            "prototype": {
+                "template": "<%= paths.build.prototype.template %>",
+                "webroot": "<%= paths.build.prototype.webroot %>"
+            },
+            "patternLibrary": {
+                "root": "<%= paths.build.patternLibrary.root %>"
+            },
+            "site": "<%= paths.build.site %>"
+        },
+
+        "buildUrl": {
+            "site": "<%= paths.buildUrl.site %>",
+            "css": "<%= paths.buildUrl.site %>css",
+            "javascript": "<%= paths.buildUrl.javascript %>",
+            "image": "<%= paths.buildUrl.image %>",
+            "font": "<%= paths.buildUrl.font %>"
+        }
+    },
+    "ftpDeploy": {
+        "host": "<%= ftp.host %>",
+        "password": "<%= ftp.pass %>",
+        "username": "<%= ftp.user %>"
+    },
+    "preferences": {
+        "autoprefix": {
+            "support": "last 2 versions, Explorer >= 8, Firefox >= 25"
+        },
+        "es2015": "<%= esVersion %>"
+    }
+}

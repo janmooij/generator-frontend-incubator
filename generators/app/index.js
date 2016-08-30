@@ -19,6 +19,8 @@ const config = require('./config.json');
 module.exports = yo.Base.extend({
 	constructor: function (arg, options) {
 		yo.Base.apply(this, arguments);
+
+
 		this.settings = config;
 
 		for (let i = 0; i < arguments.length; i = i + 1) {
@@ -30,6 +32,8 @@ module.exports = yo.Base.extend({
 				this.skipDefault = true;
 			}
 		}
+
+		this.option('framework', {type: String, required: true});
 	},
 	prompting: function () {
 		let done = this.async();
@@ -50,11 +54,27 @@ module.exports = yo.Base.extend({
 			message: 'What is version of your project?',
 			default: '1.0.0'
 		}, {
+			type: 'list',
+			name: 'framework',
+			message: 'Which JS framework would you like to use?',
+			choices: [
+				{name: 'Angular 2', value: 'angular2'},
+				{name: chalk.grey('React'), value: 'react', disabled: chalk.grey('Coming soon...')},
+				{name: 'None', value: ''}
+			]
+		},
+		{
+			when: (answers) => {
+				return answers.framework == '';
+			},
 			name: 'es2015orLoose',
 			message: 'Does Babel need to run in \'loose\' mode?',
 			default: true,
 			type: 'confirm'
 		}, {
+			when: (answers) => {
+				return answers.framework == '';
+			},
 			name: 'dependencies',
 			message: 'Select the dependencies you want to install:',
 			type: 'checkbox',
@@ -115,6 +135,19 @@ module.exports = yo.Base.extend({
 	},
 
 	writing: function () {
+
+		if (this.props.framework && this.props.framework == 'angular2') {
+			this.composeWith('angular2', {
+					options : {
+						props: this.props
+					}
+				},
+				{
+				local: require.resolve('../angular2/index.js')
+				}
+			);
+			return;
+		}
 
 		this.fs.copyTpl(
 			this.templatePath('_package.json'),
@@ -199,6 +232,11 @@ module.exports = yo.Base.extend({
 	install: function () {
 		let useLoosePreset = this.props.es2015orLoose;
 		let devDependencies = this.settings.dependencies;
+
+		// install extra dependencies:
+		let dependencies = this.props.dependencies || [];
+
+
 		if (useLoosePreset === true) {
 			devDependencies.push('babel-preset-es2015-loose');
 		}
@@ -206,11 +244,40 @@ module.exports = yo.Base.extend({
 			devDependencies.push('sass-lint');
 			devDependencies.push('gulp-sass-lint');
 		}
-		devDependencies.push('babel-preset-es2015');
+
+		if (this.props.framework && this.props.framework == 'angular2') {
+			dependencies.push('@angular/common');
+			dependencies.push('@angular/compiler');
+			dependencies.push('@angular/core');
+			dependencies.push('@angular/forms');
+			dependencies.push('@angular/http');
+			dependencies.push('@angular/platform-browser');
+			dependencies.push('@angular/platform-browser-dynamic');
+			dependencies.push('@angular/router');
+			dependencies.push('@angular/router-deprecated');
+			dependencies.push('@angular/upgrade');
+
+			dependencies.push('systemjs');
+			dependencies.push('core-js');
+			dependencies.push('reflect-metadata');
+			dependencies.push('rxjs');
+			dependencies.push('zone.js');
+
+			dependencies.push('angular2-in-memory-web-api');
+
+			devDependencies.push('typescript');
+			devDependencies.push('typings');
+
+
+		}
+		else {
+			devDependencies.push('babel-preset-es2015');
+		}
+
+
 		this.npmInstall(devDependencies, {saveDev: true});
 
-		// install extra dependencies:
-		let dependencies = this.props.dependencies || [];
+
 		if (dependencies && dependencies.length > 0) {
 			this.npmInstall(dependencies, {save: true});
 		}

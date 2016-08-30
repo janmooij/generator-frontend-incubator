@@ -7,6 +7,7 @@
     "yeoman-generator",
     "incentro",
     "frontend-incubator",
+    "angular2",
     "frontend",
     "incubator"
   ],
@@ -17,10 +18,10 @@
   },
   "homepage": "https://incentro.github.io/generator-frontend-incubator",
   "files": [
-    "app"
+    "generators/app"
   ],
   "dependencies": {
-    "yeoman-generator": "^0.23.3",
+    "yeoman-generator": "^0.24.1",
     "chalk": "^1.1.1",
     "yosay": "^1.1.0"
   },

@@ -1,0 +1,80 @@
+{
+  "paths": {
+    "src": {
+      "root": "src",
+      "asset": {
+        "javascript": "src/asset/javascript",
+        "image": "src/asset/image",
+        "font": "src/asset/font",
+        "scss": "src/asset/scss"
+      },
+      "prototype": {
+        "template": "src/prototype/template",
+        "data": "src/prototype/data",
+        "webroot": "src/prototype/webroot"
+      },
+      "patternLibrary": {
+        "root": "node_modules/frontend-incubator-kss-template/build",
+        "template": "node_modules/frontend-incubator-kss-template/build"
+      }
+    },
+    "build": {
+      "root": "build",
+      "asset": {
+        "javascript": "build/asset/javascript",
+        "image": "build/asset/image",
+        "font": "build/asset/font",
+        "css": "build/asset/css"
+      },
+      "prototype": {
+        "template": "build/prototype",
+        "webroot": "build/prototype"
+      },
+      "patternLibrary": {
+        "root": "build/pattern_library"
+      },
+      "site": "build/prototype"
+    },
+    "buildUrl": {
+      "site": "/",
+      "css": "/asset/css",
+      "javascript": "/asset/javascript",
+      "image": "/asset/image",
+      "font": "/asset/font"
+    }
+  },
+  "dependencies": [
+    "babelify",
+    "browser-sync",
+    "browserify",
+    "frontend-incubator-kss-template",
+    "gulp",
+    "gulp-autoprefixer",
+    "gulp-cache",
+    "gulp-cssnano",
+    "gulp-ftp",
+    "gulp-htmltidy",
+    "gulp-if",
+    "gulp-ignore",
+    "gulp-imagemin",
+    "gulp-insert",
+    "gulp-jshint",
+    "gulp-list",
+    "gulp-load-plugins",
+    "gulp-plumber",
+    "gulp-replace",
+    "gulp-sass",
+    "gulp-size",
+    "gulp-sourcemaps",
+    "gulp-swig",
+    "gulp-uglify",
+    "jshint",
+    "jshint-stylish",
+    "kss",
+    "nwmatcher",
+    "del",
+    "run-sequence",
+    "through2",
+    "yargs"
+  ]
+}
